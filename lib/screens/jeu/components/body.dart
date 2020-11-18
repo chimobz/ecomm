@@ -60,7 +60,7 @@ class BodyState extends State<Body> {
                             fontFamily: "WorkSansBold"),
                       ),
                     ),
-                    onPressed: ()  {Navigator.pushNamed(context, Video.routeName);}
+                    onPressed: ()  {Navigator.pushNamed(context, VideoApp.routeName);}
                     // =>
                        // showInSnackBar("Login button pressed")
                        ),

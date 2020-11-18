@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:shop_app/components/product_card.dart';
-import 'package:shop_app/models/Product.dart';
-import 'package:shop_app/routes.dart';
-import 'package:shop_app/screens/details/details_screen.dart';
 
-import 'package:shop_app/data/products.dart';
+import 'package:shop_app/screens/home/components/grid.dart';
 
 class ListProducts extends StatelessWidget {
    final double width;
@@ -21,7 +18,9 @@ class ListProducts extends StatelessWidget {
       width: width,
      height: height,
        
-      child: GridView.count(
+      child: GridMainPage(),
+      
+     /* GridView.count(
         childAspectRatio: 2/2,
           crossAxisCount: 2,
         scrollDirection: Axis.vertical,
@@ -37,6 +36,7 @@ class ListProducts extends StatelessWidget {
         
           //ProductCard(product: product,) 
           ).toList(growable:false)),
+          */
     );
         
 

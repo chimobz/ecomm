@@ -14,6 +14,7 @@ import 'package:shop_app/screens/forgot_password/forgot_password_screen.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
 import 'package:shop_app/screens/login_success/login_success_screen.dart';
 import 'package:shop_app/screens/otp/otp_screen.dart';
+import 'package:shop_app/screens/profile/modif_interet/modif_interet_screen.dart';
 import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
 import 'package:shop_app/screens/splash/splash_screen.dart';
 import 'package:shop_app/screens/profile/profile.dart';
@@ -43,8 +44,9 @@ final Map<String, WidgetBuilder> routes = {
  // LoginScreen3.routeName: (context) => LoginScreen3(),
   JeuScreen.routeName: (context) => JeuScreen(),
   ActualiteScreen.routeName: (context) => ActualiteScreen(),
-  Video.routeName: (context) => Video(),
+  VideoApp.routeName: (context) => VideoApp(),
   Example.routeName: (context) => Example(),
   CentreIneteretScreen.routeName: (context) => CentreIneteretScreen(),
-  Times.routeName: (context) => Times()
+  Times.routeName: (context) => Times(),
+  ModifIneteretScreen.routeName:(context) => ModifIneteretScreen(),
 };

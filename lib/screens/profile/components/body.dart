@@ -5,6 +5,7 @@ import 'package:shop_app/screens/complete_profile/centre_interet.dart';
 import 'package:shop_app/screens/example2/main.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
 import 'package:shop_app/screens/profile/modif_info.dart';
+import 'package:shop_app/screens/profile/modif_interet/modif_interet_screen.dart';
 import 'package:shop_app/screens/splash/components/theme.dart' as Theme;
 import 'package:shop_app/screens/splash/splash_screen.dart';
 class Body extends StatelessWidget  {
@@ -150,7 +151,7 @@ class Body extends StatelessWidget  {
                             fontFamily: "WorkSansBold"),
                       ),
                     ),
-                    onPressed: ()  {Navigator.pushNamed(context, CentreIneteretScreen.routeName);}
+                    onPressed: ()  {Navigator.pushNamed(context, ModifIneteretScreen.routeName);}
                     // =>
                        // showInSnackBar("Login button pressed")
                        ),

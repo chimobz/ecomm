@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/home/home_screen.dart';
+import 'package:shop_app/screens/profile/profile.dart';
 //import 'package:flutter_multiselection_list/griditem.dart';
 
 class HomePage extends StatefulWidget {
+   //final String tag;
+  //const HomePage(this.tag);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -93,8 +97,14 @@ class _HomePageState extends State<HomePage> {
          child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Icon(Icons.done),
-                )
-              //  onTap: press,
+                ),
+               // onTap: (){
+                 // widget.tag=="first" ?
+                //  Navigator.pushNamed(context, HomeScreen.routeName)
+                //  :
+               //   Navigator.pushNamed(context, ProfilePage.routeName);
+
+               // },
         )
        /* selectedList.length < 1
             ? Container()

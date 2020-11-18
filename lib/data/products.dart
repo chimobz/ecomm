@@ -18,8 +18,8 @@ List<Product> demoProducts = [
     price: 64.99,
     description: description,
    // rating: 4.8,
-    isFavorite: false,
-    isPopular: true,
+    //isFavorite: false,
+   // isPopular: true,
   ),
     Product(
     id: 110,
@@ -36,8 +36,8 @@ List<Product> demoProducts = [
     price: 70.000,
     description: description,
    // rating: 4.8,
-    isFavorite: false,
-    isPopular: true,
+    //isFavorite: false,
+   // isPopular: true,
   ),
   Product(
     id: 2,
@@ -50,8 +50,8 @@ List<Product> demoProducts = [
     price: 50.5,
     description: description,
     //rating: 4.1,
-    isPopular: true,
-    isFavorite: false
+    //isPopular: true,
+   // isFavorite: false
   ),
   Product(
     id: 3,
@@ -63,8 +63,8 @@ List<Product> demoProducts = [
     price: 36.55,
     description: description,
   //  rating: 4.1,
-    isFavorite: true,
-    isPopular: true,
+  //  isFavorite: true,
+  //  isPopular: true,
   ),
   Product(
     id: 4,
@@ -81,7 +81,7 @@ List<Product> demoProducts = [
     price: 20.20,
     description: description,
    // rating: 4.1,
-    isFavorite: true,
+    //isFavorite: true,
   ),
 ];
 

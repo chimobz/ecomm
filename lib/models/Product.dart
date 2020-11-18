@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/components/favorite_widget.dart';
 import 'dart:math';
 //import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -15,7 +16,7 @@ class Product {
  //final List<Color> colors;
  final int daysleft;
   final double  price;
-  final bool isFavorite, isPopular;
+   bool isFavorite;
   final int dateFin;
 
   Product({
@@ -28,7 +29,7 @@ class Product {
    // @required this.colors,
    // this.rating = 0.0,
     this.isFavorite = false,
-    this.isPopular = false,
+    //this.isPopular = false,
     @required this.title,
     @required this.price,
     @required this.description,
@@ -74,7 +75,8 @@ class Product {
       {@required BuildContext context,
       @required Product product,
       @required VoidCallback showProductInfo,
-      @required VoidCallback onFavoritesClick}) {
+      @required bool isFavorite,
+      @required Function(bool isFavorite) onFavoritesClick}) {
     return BaseProductTile(
      // title: product.title,
         onClick: showProductInfo,
@@ -96,7 +98,9 @@ class Product {
                 mainAxisAlignment:MainAxisAlignment.spaceBetween,
                 children: [
                    buildPrice(Theme.of(context),"body"),
-                    FloatingActionButton(
+                   FavoriteWidget(product:product, onFavoritesClick: onFavoritesClick, isFavorite: isFavorite),
+                   
+                   /* FloatingActionButton(
                       heroTag: product.id,
                     backgroundColor: Colors.white,
                     onPressed: onFavoritesClick,
@@ -113,7 +117,7 @@ class Product {
                     size: 18.0,
                      ),
                       
-                    ),
+                    ),*/
 
                 ]
               ),
@@ -217,7 +221,7 @@ class Product {
         id :id,
         images: images,
         isFavorite: isFavourite??false,
-        isPopular:isPopular,
+       // isPopular:isPopular,
         title: title,
         price: price,
         description: description,

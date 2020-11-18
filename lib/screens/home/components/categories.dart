@@ -8,16 +8,19 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"image": "assets/images/categories/basket.png", "text": "Electro"},
-      {"image": "assets/images/categories/cuisine.png", "text": "Auto"},
+      {"image": "assets/images/categories/basket.png", "text": "Auto"},
+      {"image": "assets/images/categories/cuisine.png", "text": "Cuisine"},
       {"image": "assets/images/categories/basket.png", "text": "Sport"},
       
-      {"image": "assets/images/categories/montre.png", "text": "Clothes"},
-      {"image": "assets/images/categories/clothes.jpg", "text": "More"},
+      {"image": "assets/images/categories/montre.png", "text": "Montres"},
+      {"image": "assets/images/categories/clothes.jpg", "text": "Clothes"},
       {"image": "assets/images/categories/basket.png", "text": "Sport"},
       
-      {"image": "assets/images/categories/montre.png", "text": "Clothes"},
-      {"image": "assets/images/categories/clothes.jpg", "text": "More"},
+      {"image": "assets/images/categories/montre.png", "text": "Montres"},
+      {"image": "assets/images/categories/clothes.jpg", "text": "Clothes"},
+       
+      {"image": "assets/images/categories/montre.png", "text": "Montres"},
+      {"image": "assets/images/categories/clothes.jpg", "text": "Clothes"},
     ];
     return  Container(
       height: 250,
@@ -25,7 +28,7 @@ class Categories extends StatelessWidget {
       child: GridView.builder(
           itemCount: categories.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
+              crossAxisCount: 5,
               childAspectRatio: 0.75,
               crossAxisSpacing: 2,
               mainAxisSpacing: 2
@@ -94,7 +97,7 @@ class CategoryCard extends StatelessWidget {
           children: [
             Container(
             //  padding: EdgeInsets.all(getProportionateScreenWidth(15)),
-            height: getProportionateScreenWidth(80),
+            height: getProportionateScreenWidth(60),
            //   width: getProportionateScreenWidth(60),
            //  decoration: BoxDecoration(
                // color: Color(0xFFFFECDF),

@@ -15,7 +15,7 @@ class JeuScreen extends StatelessWidget {
       title: "Jeu",
       background: null,
       // tabController: null,
-      bottomMenuIndex: 3,
+      bottomMenuIndex: 2,
       body:Body()
     );
   

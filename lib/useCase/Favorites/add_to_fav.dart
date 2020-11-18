@@ -5,7 +5,7 @@
 /// The product is added to favorites with the same color 
 /// and size as the cart item.
 /// https://medium.com/@openflutterproject/open-flutter-project-e-commerce-app-use-cases-and-features-6b7414a6e708
-
+/*
 //import 'package:openflutterecommerce/data/model/favorite_product.dart';
 //import 'package:openflutterecommerce/data/repositories/product_repository_impl.dart';
 import 'package:shop_app/data/categories.dart';
@@ -46,3 +46,4 @@ class AddToFavoriteResult extends UseCaseResult {
   AddToFavoriteResult({Exception exception, bool result}) 
     : super(exception: exception, result: result);
 }
+*/

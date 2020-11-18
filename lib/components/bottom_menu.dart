@@ -88,7 +88,7 @@ class OpenFlutterBottomMenu extends StatelessWidget {
                 break;
               case 3:
                 Navigator.pushNamed(
-                    context, Example.routeName);
+                    context, ActualiteScreen.routeName);
                 break;
               case 4:
                 Navigator.pushNamed(

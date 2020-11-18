@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/example2/body.dart';
+import 'package:shop_app/screens/complete_profile/components/Centre_body.dart';
 
 
 
 class CentreIneteretScreen extends StatelessWidget {
   static String routeName = "/centrescreen";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +15,7 @@ class CentreIneteretScreen extends StatelessWidget {
      //  title: Text('Choisissez vos centres d`\'intérêt'),
      // ),
 
-       body:   HomePage(),
+       body:   CentreBody(),
 
       // HomePage(),
     );

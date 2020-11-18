@@ -1,140 +1,68 @@
-import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:flutter/material.dart';
 
+void main() => runApp(VideoApp());
 
-class Video extends StatefulWidget {
+class VideoApp extends StatefulWidget {
+  
    static String routeName="video";
- 
   @override
-  VideoDemoState createState() => VideoDemoState();
+  _VideoAppState createState() => _VideoAppState();
 }
 
-class VideoDemoState extends State<Video> {
-
-    VideoPlayerController playerController;
-  VoidCallback listener;
+class _VideoAppState extends State<VideoApp> {
+  VideoPlayerController _controller;
 
   @override
   void initState() {
     super.initState();
-    listener = () {
-      setState(() {});
-    };
-  }
-
-  void createVideo() {
-    if (playerController == null) {
-      playerController = VideoPlayerController.asset(
-          "assets/images/vid.mp4")
-        ..addListener(listener)
-        ..setVolume(1.0)
-        ..initialize()
-        ..play();
-    } else {
-      if (playerController.value.isPlaying) {
-        playerController.pause();
-      } else {
-        playerController.initialize();
-        playerController.play();
-      }
-    }
-  }
-
-  @override
-  void deactivate() {
-    playerController.setVolume(0.0);
-    playerController.removeListener(listener);
-    super.deactivate();
+    _controller = VideoPlayerController.network(
+        'http://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4')
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Video Example'),
-      ),
-      body: Center(
-          child: AspectRatio(
-              aspectRatio: 16 / 9,
-              child: Container(
-                child: (playerController != null
-                    ? VideoPlayer(
-                        playerController,
-                      )
-                    : Container()),
-              ))),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          createVideo();
-          playerController.play();
-        },
-        child: Icon(Icons.play_arrow),
-      ),
+    return
+    // MaterialApp(
+     // title: 'Video Demo',
+    //  home: 
+      Scaffold(
+        body: Center(
+          child: _controller.value.initialized
+              ? AspectRatio(
+                  aspectRatio: _controller.value.aspectRatio,
+                  child: VideoPlayer(_controller),
+                )
+              : Container(),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              _controller.value.isPlaying
+                  ? _controller.pause()
+                  : _controller.play();
+            });
+          },
+          child: Icon(
+            _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+          ),
+        ),
+      //),
     );
-  }
-
-
- /*VideoPlayerController _controller;
-  Future<void> _initializeVideoPlayerFuture;
-
-  @override
-  void initState() {
-    _controller = VideoPlayerController.asset(
-        "assets/images/vid.mp4");
-    //_controller = VideoPlayerController.asset("videos/sample_video.mp4");
-    _initializeVideoPlayerFuture = _controller.initialize();
-    _controller.setLooping(true);
-    _controller.setVolume(1.0);
-    super.initState();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
     super.dispose();
+    _controller.dispose();
   }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Regarder la vidéo"),
-        ),
-        body: FutureBuilder(
-          future: _initializeVideoPlayerFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return Center(
-                child: AspectRatio(
-                  aspectRatio: _controller.value.aspectRatio,
-                  child: VideoPlayer(_controller),
-                ),
-              );
-            } else {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-          },
-        ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.pink,
-          onPressed: () {
-            setState(() {
-              if (_controller.value.isPlaying) {
-                _controller.pause();
-              } else {
-                _controller.play();
-              }
-            });
-          },
-          child:
-        
-          Icon(_controller.value.isPlaying ? Icons.pause : Icons.play_arrow),
-        ),
-      ),
-    );
-  }*/
 }
+
+
+
+ 
+ 

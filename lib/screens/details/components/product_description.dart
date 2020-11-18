@@ -55,7 +55,7 @@ class ProductDescription extends StatelessWidget {
        // Padding(
          
          
-        /* Container(
+        Container(
           padding:
               EdgeInsets.all(10),
           child: Row(
@@ -67,13 +67,13 @@ class ProductDescription extends StatelessWidget {
             Text(
             "Jours restants  : ",
             style: TextStyle(color: Colors.black, fontSize: 15)
-          ),
-          */
+             ),
+          
 
 
 
 
-       /*   Container(
+          Container(
             width:60,
             height: 40,
               decoration: BoxDecoration(
@@ -90,14 +90,14 @@ class ProductDescription extends StatelessWidget {
           ),
            
           ),)  ,
-          )*/
+          )
         
 
-         //   ]
-         // ),
+           ]
+          ),
           
          
-      //  ),
+        ),
 
          /*Padding(
           padding:EdgeInsets.all(10),
